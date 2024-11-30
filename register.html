@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css"> <!-- Make sure to link your CSS file -->
+    <link rel="icon" href="image/logo.jpeg" type="image/png"> <!-- Favicon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>Gallery - MJ Newcomer Solutions</title>
+</head>
+
+
+<body>
+
+    <div class="header">
+        <a href="#" class="logo"> <i class="fas fa-MJ-Newcomer-Solutions"></i>MJ Newcomer Solutions
+            <img src="imagen/logo.jpeg" alt="MJ Newcomer Solutions Logo" style="height: 65px;"> <!-- Adjust the path and size as needed -->
+        </a>
+        <nav class="navbar">
+            
+            <a href="index.html">Home</a>
+            <a href="About.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="donate.html">Donate</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        <div id="menu-btn" class="fas fa-bars"></div>
+    </div>
+    
+<!-- Register -->
+
+<main>
+    <h3>Create a New Account</h3>
+    <form action="register.php" method="POST" class="registration-form">
+        <label for="first_name">First Name:</label>
+        <input type="text" id="first_name" name="first_name" required>
+
+        <label for="last_name">Last Name:</label>
+        <input type="text" id="last_name" name="last_name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" required>
+
+        <label for="role">I am:</label>
+        <select id="role" name="role" required>
+            <option value="">Select an option</option> <!-- Empty value -->
+            <option value="new_volunteer">A New Volunteer</option>
+            <option value="existing_volunteer">An Existing Volunteer</option>
+        </select>
+
+
+        <label for="support_type">I want to:</label>
+        <select id="support_type" name="support_type" required>
+                <option value="">Select an option</option> <!-- Empty value -->
+                <option value="donate_food">Donate Food</option>
+                <option value="donate_clothes">Donate Clothes</option>
+                <option value="volunteer">Volunteer</option>
+                </select>
+
+        <button type="submit">Register</button>
+    </form>
+    <p>Already have an account? <a href="login.html">Login</a></p>
+</main>
+
+       <!-- Footer  -->
+       <footer class="footer">
+            <div class="logo-container">
+                <a href="#" class="logo"> <i class="fas fa-MJ-Newcomer-Solutions"></i>MJ Newcomer Solutions
+                    <img src="imagen/logo.jpeg" alt="MJ Newcomer Solutions Logo" style="height: 65px;"> <!-- Adjust the path and size as needed -->
+                </a>
+            </div>
+        
+            <div class="icons-container">
+                <div class="icons">
+                    <i class="fas fa-map"> </i>
+                    <h3> Address </h3>
+                    <p>Online, Toronto, ON, Canada. </p>
+                </div>
+        
+                <div class="icons">
+                    <i class="fas fa-phone"></i>
+                    <h3>Phone</h3>
+                    <p> +172-159-903</p>
+                    <p> +1(647)-712-1746</p>
+                </div>
+                <div class="icons">
+                    <i class="fas fa-envelope"> </i>
+                    <h3> Email </h3>
+                    <a href="#" class="link">mjnewcomersolutions@gmail.com</a>
+                </div>
+        
+                <div class="icons">
+                    <i class="fas fa-clock"> </i>
+                    <h3> Opening Hours </h3>
+                    <p> Monday - Friday: 9:00 a.m. - 6:00 p.m. <br> Saturday: 10:00 a.m. - 5:00 p.m. <br> Sunday: Closed</p>
+                </div>
+            </div>
+        
+            <div class="share">
+                <a href="#" class="fab fa-facebook-f"></a>
+                <a href="#" class="fab fa-twitter"></a>
+                <a href="#" class="fab fa-instagram"></a>
+                <a href="#" class="fab fa-linkedin"></a>
+            </div>
+        
+    </footer>
+</body>
+</html>

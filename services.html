@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="imagen/logo.jpeg" type="image/png"> <!-- Add this line for the favicon -->
+     <!-- font awesome -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+     <!-- swiper -->
+     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css">
+     <!-- lightgallery -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.0/css/lightgallery.min.css">
+    <title>MJ Newcomer Solutions</title>
+</head>
+
+
+<body>
+
+    <div class="header">
+       
+        <a href="#" class="logo"> <i class="fas fa-MJ-Newcomer-Solutions"></i>MJ Newcomer Solutions
+            <img src="imagen/logo.jpeg" alt="MJ Newcomer Solutions Logo" style="height: 65px;"> 
+        </a>
+        <nav class="navbar">
+            
+            <a href="index.html">Home</a>
+            <a href="About.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="donate.html">Donate</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html">Contact</a>
+            
+        </nav>
+        
+        <div id="menu-btn" class="fas fa-bars"></div>
+    </div>
+    
+<!-- Services  -->
+
+<section class="services" id="services-other">
+    <h2 class="heading">Our Services</h2>
+    <div class="row">
+        <div class="image">
+            <img src="imagen/imagen3.jpeg" alt="Imagen">
+        </div>
+
+        <div class="content">
+            <p>At MJ Newcomer Solutions, we offer a variety of services designed to support newcomers on their new adventure in Canada. From:</p>
+
+            <p>🤍 Moral Support:<br> 
+            We provide comfort and encouragement on your new adventure.</p>
+            <p>🤍 Connections and Referral:<br> 
+            We facilitate your integration into the community.</p>
+            <p>🤍 Guidance and Information:<br> 
+            We provide details for informed decisions.</p>
+            <p>🤍 Personalized Services:<br> 
+            We tailor our support to your unique needs.</p>
+            <p>🤍 City Navigation:<br> 
+            We help you feel at home in your new environment.</p>
+
+            <p>We are here to accompany you every step of the way. Find out how we can help you today!</p>
+
+            <button class="decorative-button" onclick="location.href='#services-other-2'">See Our Services</button>
+        </div>
+    </div>
+</section>
+
+
+<section class="services" id="services-other-2">
+    <h2 class="heading">Our Services</h2>
+    <div class="box-container">
+        <div class="box">
+            <div class="image">
+                <img src="inf-ima/services.png" alt="Imagen de servicios de inmigración">
+            </div>
+            <div class="content">
+                <h3 class="title">Immigration Service</h3>
+                <p>If you have any questions about your immigration status, we will help you.</p>
+                <button class="btn-more-info" onclick="openModal('infoModal')">More Information</button>
+            </div>
+        </div>
+
+        <!-- Modal for Immigration Service-->
+        <div id="infoModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('infoModal')">&times;</span>
+                <a href="#" class="logo"> <i class="fas fa-MJ-Newcomer-Solutions"></i>MJ Newcomer Solutions
+                    <img src="imagen/logo.jpeg" alt="MJ Newcomer Solutions Logo" style="height: 65px;"> 
+                </a>
+                <h2>JESSICA GOMEZ/HUMAN AND LABOR RIGHTS COORDINATOR</h2>
+                <p>Our Coordinator Jessica, a woman with a great goal in our organization. <br>
+                Helping us to know our rights, eradicate violence and fight with us to achieve equality in this country.</p>
+
+                <!-- Contact Us Button -->
+                <a href="contact.html" class="button">Contact Us</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+     <!-- psychological services  -->
+<section class="services" id="services-other-3">
+        <div class="box-container">
+            <div class="box">
+                <div class="image">
+                    <img src="inf-ima/py.jpeg" alt="services">
+                </div>
+                <div class="content">
+                    <h3 class="title">Services In psychology</h3>
+                    <p>At MJ Newcomer Solutions, we offer psychology services designed <br>
+                         to ease the transition of newcomers to Canada. Our goal is to emotionally empower <br>
+                         you so that you can meaningfully contribute to society.</p>
+                         <button class="btn-more-info" onclick="openModal('infoModal2')">More Information</button>
+                </div>
+            </div>
+    
+            <!-- Modal for  Service-->
+            <div id="infoModal2" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal('infoModal2')">&times;</span>
+                    <img src="imagen/logo.jpeg" alt="MJ Newcomer Solutions Logo" style="height: 65px;">
+                    <h2>Jose Pastor- Psychologist</h2>
+                    <p>Are you looking for a space where you can discover your purpose and improve your quality of life? <br>
+                        At MJ Newcomer Solutions, our team of psychologists is here to support you every step of the way.<br>
+                    With personalized strategies and a firm commitment to inclusion and diversity, <br>
+                    we offer you a safe and welcoming environment to grow, heal and flourish<br>
+
+                        Contact us to begin your journey towards emotional well-being!</p>
+
+                     <!-- Contact Us Button -->
+               <a href="contact.html" class="button">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+         <!-- services  -->
+<section class="services" id="services-other-4">
+    <div class="box-container">
+        <div class="box">
+            <div class="image">
+                <img src="inf-ima/service2.png" alt="services">
+            </div>
+            <div class="content">
+                <h3 class="title">Meet Our Sales Leader at MJ Newcomer Solutions</h3>
+                <p>At MJ Newcomer Solutions, Nataly leads with passion and vision, <br>
+                    driving our sales success. Her ability to build strong relationships and achieve goals<br>
+                     guides us toward a bright future. </p>
+                     <button class="btn-more-info" onclick="openModal('infoModal3')">More Information</button>
+            </div>
+        </div>
+
+        <!-- Modal for Service-->
+        <div id="infoModal3" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('infoModal3')">&times;</span>
+                <img src="imagen/logo.jpeg" alt="MJ Newcomer Solutions Logo" style="height: 65px;">
+                <h2>Nataly - Our Sales Leader at MJ Newcomer Solutions</h2>
+                <p>At MJ Newcomer Solutions, Nataly leads our sales team with an innovative<br>
+                    approach and an entrepreneurial spirit. Her ability to build strong relationships and <br>
+                    achieve goals is key to our success. <br>
+                   If you're interested in growing with us, give us a call today!
+               </p>
+                 <!-- Contact Us Button -->
+    <a href="contact.html" class="button">Contact Us</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+         <!-- services workshops -->
+         <section class="services" id="services-other-5">
+            <div class="box-container">
+                <div class="box">
+                    <div class="image">
+                        <img src="inf-ima/yoga.jpeg" alt="services">
+                    </div>
+                    <div class="content">
+                        <h3 class="title">Service of different workshops</h3>
+                        <p>At MJ Newcomer Solutions, we offer workshops for your personal and professional development.</p>
+                        <button class="btn-more-info" onclick="openModal('infoModal4')">More Information</button>
+                    </div>
+                </div>
+        
+                <!-- Modal for Service-->
+                <div id="infoModal4" class="modal">
+                    <div class="modal-content">
+                        <span class="close" onclick="closeModal('infoModal4')">&times;</span>
+                        <img src="imagen/logo.jpeg" alt="MJ Newcomer Solutions Logo" style="height: 65px;">
+                        <h2>Discover Our Workshops at MJ Newcomer Solutions</h2>
+                        <p>At MJ Newcomer Solutions, we offer a variety of workshops designed to empower<br>
+                        you and enrich your experience. From practical skills to personal development, <br>
+                         our workshops are here to help you grow and thrive. <br>
+                         
+                         Interested in joining our workshops? Give us a call today!</p>
+                    <!-- Contact Us Button -->
+                <a href="contact.html" class="button">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+                 <!-- psychological services  -->
+<section class="services" id="services-other-6">
+    <div class="box-container">
+        <div class="box">
+            <div class="image">
+                <img src="inf-ima/english.jpeg" alt="services">
+            </div>
+            <div class="content">
+                <h3 class="title">English classes</h3>
+                <p>Is English making your life in this country difficult? At MJ Newcomer Solutions, <br>
+                we offer classes that will help you communicate with confidence and ease. </p>
+                <button class="btn-more-info" onclick="openModal('infoModal5')">More Information</button>
+            </div>
+        </div>
+
+        <!-- Modal for Service-->
+        <div id="infoModal5" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('infoModal5')">&times;</span>
+                <img src="imagen/logo.jpeg" alt="MJ Newcomer Solutions Logo" style="height: 65px;">
+                <h2>Improve your English with MJ Newcomer Solutions</h2>
+                <p>At MJ Newcomer Solutions, we offer English classes to help you communicate with confidence.<br>
+                Our experienced instructors will guide you to achieve your personal and professional goals.<br>
+                With a practical and interactive approach, our classes prepare you for new opportunities. <br>
+                    
+                    Ready to improve your English? Call us today!</p>
+                 <!-- Contact Us Button -->
+                 <a href="contact.html" class="button">Contact Us</a>
+            </div>
+        </div>
+    </div>
+</section>
+    
+
+       <!-- Footer  -->
+    <footer class="footer">
+
+            <div class="logo-container">
+                <a href="#" class="logo"> <i class="fas fa-MJ-Newcomer-Solutions"></i>MJ Newcomer Solutions
+                    <img src="imagen/logo.jpeg" alt="MJ Newcomer Solutions Logo" style="height: 65px;"> <!-- Adjust the path and size as needed -->
+                </a>
+            </div>
+        
+            <div class="icons-container">
+                <div class="icons">
+                    <i class="fas fa-map"> </i>
+                    <h3> Address </h3>
+                    <p>Online, Toronto, ON, Canada. </p>
+                </div>
+        
+                <div class="icons">
+                    <i class="fas fa-phone"></i>
+                    <h3>Phone</h3>
+                    <p> +172-159-903</p>
+                    <p> +1(647)-712-1746</p>
+                </div>
+                <div class="icons">
+                    <i class="fas fa-envelope"> </i>
+                    <h3> Email </h3>
+                    <a href="#" class="link">mjnewcomersolutions@gmail.com</a>
+                </div>
+        
+                <div class="icons">
+                    <i class="fas fa-clock"> </i>
+                    <h3> Opening Hours </h3>
+                    <p> Monday - Friday: 9:00 a.m. - 6:00 p.m. <br> Saturday: 10:00 a.m. - 5:00 p.m. <br> Sunday: Closed</p>
+                </div>
+            </div>
+        
+            <div class="share">
+                <a href="#" class="fab fa-facebook-f"></a>
+                <a href="#" class="fab fa-twitter"></a>
+                <a href="#" class="fab fa-instagram"></a>
+                <a href="#" class="fab fa-linkedin"></a>
+            </div>
+
+            <script src="script.js"></script>
+        </footer>
+        
+    </body>
+</html>

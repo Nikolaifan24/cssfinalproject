@@ -1,0 +1,1719 @@
+@import url('https://fonts.googleapis.com/css?family=Dosis:wght@200;300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto:wght@300;400;500;700&display=swap'); /* Second font */
+
+:root {
+    --main-color: #6f0eb4; /* Main Purple Color */
+    --primary-color: #e6d8f2; /* Light Purple */
+    --bg-color: #e0c9f9; /* Very Light Purple Background */
+    --hover: #5e0e8d; /* Darker Purple for Hover Effects */
+    --black: #222; /* Black */
+    --white: #fff; /* White */
+    --border: .1rem solid #aaa; /* Border Color */
+    --box-shadow: 0.5rem 1rem rgba(0, 0, 0, .1); /* Box Shadow */
+}
+
+html {
+    scroll-behavior: smooth; 
+    font-size: 62.5%; /* 1rem = 10px */
+    overflow-x: hidden;
+    scroll-padding-top: 6rem;
+}
+
+* {
+    font-family: 'Dosis', sans-serif; /* Main font */
+    outline: none;
+    text-decoration: none;
+    transition: all 0.4s cubic-bezier(.43, 1.1, .62, 1.08);
+    text-transform: capitalize;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Roboto', sans-serif; /* Secondary font for headers */
+}
+
+section {
+    padding: 7rem 0;
+}
+
+
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .services .box {
+        max-width: 100%; /* Each box will take 100% width on small screens */
+        margin: 10px 0; /* Space between boxes */
+    }
+
+    .services .heading {
+        font-size: 30px; /* Adjust heading size for smaller screens */
+    }
+
+    .services .content p {
+        font-size: 1.2em; /* Adjust paragraph size */
+    }
+
+    .decorative-button, .btn-more-info {
+        width: 100%; /* Full width buttons on small screens */
+        font-size: 1em; /* Adjust font size */
+    }
+
+    .modal-content {
+        width: 90%; /* Full width for modal on small screens */
+        padding: 15px; /* Adjust padding */
+    }
+
+    .modal-content h2 {
+        font-size: 20px; /* Adjust modal title size */
+    }
+
+    .modal-content p {
+        font-size: 1rem; /* Adjust modal text size */
+    }
+
+    .header, .footer {
+        padding: 20px; /* Reduce padding for header and footer */
+    }
+}
+
+/* header */
+.header {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: var(--box-shadow);
+    position: sticky;
+    top: 0;
+    left: 0; 
+    right: 0;
+    background: var(--white);
+}
+
+.header .logo {
+    font-size: 2.5rem;
+    font-weight: bolder;
+    color: var(--black);
+}
+
+.header .logo i {
+    color: var(--main-color);
+    padding-right: .5rem;
+}
+
+.header .navbar a {
+    font-size: 2rem;
+    margin-left: 2.8rem;
+    color: var(--black);
+}
+
+.header .navbar a:hover {
+    padding-bottom: .5rem;
+    color: var(--main-color);
+    border-bottom: 0.1rem solid var(--main-color);
+}
+
+#menu-btn {
+    font-size: 2.5rem;
+    cursor: pointer;
+    color: var(--black);
+    display: none; /* Hidden by default */
+}
+
+
+/* Home */
+
+@keyframes fadeIn {
+    0% {
+        transform: translateY(-4rem) scale(0);
+        opacity: 0;
+    }
+}
+
+h2 {
+    font-size: 2em; /* Increase the size of the h2 title */
+    margin-left: auto; /* Push the title to the right */
+    text-align: right; /* Align text to the right */
+    width: 100%; /* Take full width */
+}
+
+.home {
+    padding: 0;
+}
+
+.home .slide {
+    min-height: 100vh;
+    background-size: cover !important;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    position: relative; /* Necessary for absolute positioning of the content */
+}
+
+.home .slide .content {
+    text-align: center;
+    width: 70rem; /* Fixed width */
+    padding-left: 16rem; /* Fixed padding */
+    display: none;
+    position: absolute; /* Positioning for the overlay */
+    bottom: 20px; /* Position from the bottom */
+    left: 20px; /* Position from the left */
+    background-color: rgba(106, 13, 173, 0.7); /* Purple with transparency */
+    padding: 20px; /* Internal spacing */
+    border-radius: 10px; /* Rounded corners */
+    color: #ffffff; /* Text color */
+}
+
+.home .slide .content h3 {
+    font-size: 4rem; /* Large font size */
+    text-transform: uppercase;
+    color: var(--white);
+    line-height: 1;
+    padding: 2rem 0;
+    animation: fadeIn 0.4s cubic-bezier(.54, 1.3, .63, 1.34) .2s backwards;
+}
+
+.home .slide .content .btn {
+    animation: fadeIn 0.4s cubic-bezier(.54, 1.3, .63, 1.34) .4s backwards;
+    display: inline-block;
+    padding: 1.5rem 3rem;
+    background-color: var(--main-color);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    font-size: 1.2rem;
+}
+
+.home .slide .content .btn:hover {
+    background-color: var(--dark-main-color);
+}
+
+.home .swiper-slide-active .content {
+    display: inline-block;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    height: 5rem;
+    width: 5rem;
+    line-height: 5rem;
+    background: var(--white);
+    color: var(--black);
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    background: var(--main-color);
+    color: var(--white);
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+    font-size: 2rem;
+}
+    .swiper-button-next,
+    .swiper-button-prev {
+        height: 3rem; /* Further adjust button size */
+        width: 3rem;
+    }
+
+    .swiper-button-next::after,
+    .swiper-button-prev::after {
+        font-size: 1.2rem; /* Further adjust icon size */
+    }
+    /* Responsive styles */
+@media (max-width: 768px) {
+    h2 {
+        font-size: 1.5em; /* Decrease font size for h2 */
+        text-align: center; /* Center align text for better readability */
+        margin-left: 0; /* Remove left margin */
+    }
+
+    .home .slide {
+        min-height: 70vh; /* Reduce minimum height for smaller screens */
+    }
+
+    .home .slide .content {
+        width: 90%; /* Allow content to take up more width */
+        padding: 10px; /* Reduce padding for smaller screens */
+        left: 5%; /* Center content */
+        bottom: 10px; /* Adjust position from the bottom */
+    }
+
+    .home .slide .content h3 {
+        font-size: 2.5rem; /* Decrease font size for the heading */
+        padding: 1rem 0; /* Adjust padding for the heading */
+    }
+
+    .home .slide .content .btn {
+        padding: 1rem 2rem; /* Adjust button padding */
+        font-size: 1rem; /* Decrease font size for the button */
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+        height: 4rem; /* Adjust button size for smaller screens */
+        width: 4rem;
+    }
+
+    .swiper-button-next::after,
+    .swiper-button-prev::after {
+        font-size: 1.5rem; /* Adjust icon size for buttons */
+    }
+}
+
+/* information*/
+
+.information .row {
+    display: flex;
+    align-items: stretch; 
+    flex-wrap: nowrap;
+    padding: 20px; /* Add padding to increase space around the row */
+    margin: 20px; /* Add margin to create space outside the row */
+}
+
+.information .row .image {
+    flex: 1 1 50%;
+    margin: 0; 
+}
+
+.information .row .image img {
+    width: 100%; 
+    margin: 0;
+    border-radius: 10px; /* Optional: Add rounded corners to the image */
+}
+
+.information .row .content {
+    flex: 1 1 50%; 
+    padding: 3rem; /* Increase padding for more space inside the content box */
+    background-color: #6a0dad; /* Dark purple background for the content */
+    border-radius: 10px; /* Rounded corners */
+    margin: 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5), /* Shadow for depth */
+                inset 0 0 10px rgba(255, 255, 255, 0.1); /* Inset shadow for 3D effect */
+    transition: transform 0.3s; /* Smooth transition for hover effect */
+}
+
+.information .row .content:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+}
+
+.information .row .content p {
+    font-size: 2rem;
+    color: #ffffff;
+    line-height: 1.8;
+    margin: 0;
+    text-align: center;
+}
+
+.information .row .content h3 {
+    font-size: 2rem;
+    text-align: center;
+    padding: 1rem 0;
+    line-height: 1.8;
+    font-weight: bold;
+    font-size: 40px;
+    text-shadow: 0 1px 0 #ccc, 
+                 0 2px 0 #c9c9c9,
+                 0 3px 0 #bbb,
+                 0 4px 0 #b9b9b9,
+                 0 5px 0 #aaa,
+                 0 6px 1px rgba(0,0,0,.1),
+                 0 0 5px rgba(0,0,0,.1),
+                 0 1px 3px rgba(0,0,0,.3),
+                 0 3px 5px rgba(0,0,0,.2),
+                 0 5px 10px rgba(0,0,0,.25),
+                 0 10px 10px rgba(0,0,0,.2),
+                 0 20px 20px rgba(0,0,0,.15);
+    color: #fff; 
+}
+
+.read-more {
+    background-color: #fff; 
+    color: #6a0dad; 
+    border: 2px solid #6a0dad; 
+    padding: 10px 20px; 
+    font-size: 1.5rem; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    transition: background-color 0.3s, color 0.3s; 
+}
+
+.read-more:hover {
+    background-color: #6a0dad; 
+    color: #fff; 
+}
+
+.information {
+    background-color: #b193c7; /* Purple background */
+    color: #ffffff; /* White text color for contrast */
+}
+
+.information .row {
+    display: flex;
+    align-items: stretch; 
+    flex-wrap: nowrap;
+    padding: 20px; 
+    margin: 20px; 
+}
+
+.information .row .image {
+    flex: 1 1 50%;
+    margin: 0; 
+}
+
+.information .row .image img {
+    width: 100%; 
+    margin: 0;
+    border-radius: 10px; 
+}
+
+.information .form-container {
+    flex: 1 1 50%;
+    padding: 3rem; 
+    background-color: 0 4px 20px rgba(0, 0, 0,); /* Semi-transparent white */
+    border-radius: 10px; 
+    margin: 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s; 
+}
+
+.information .form-container:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+}
+
+.information  h3 {
+    text-align: center;
+    font-size: 3.5rem; /* Increase heading size */
+}
+
+.information .form-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.information .form-container label {
+    margin: 10px 0 5px;
+    font-size: 1.5rem; /* Increase label size */
+}
+
+.information .form-container input,
+.information .form-container select {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s;
+    font-size: 1.5rem; /* Increase input size */
+}
+
+.information .form-container input:focus,
+.information .form-container select:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(106, 13, 173, 0.8); /* Purple glow on focus */
+}
+
+.information .form-container button {
+    padding: 10px;
+    background-color: #6a0dad; /* Purple button */
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 2.5rem; /* Increase button font size */
+}
+
+.information .form-container button:hover {
+    background-color: #5a0a9d; /* Darker purple on hover */
+}
+
+.information .form-container p {
+    text-align: center;
+    font-size: 1.2rem; /* Increase text size for the paragraph */
+}
+
+.information p {
+    text-align: center;
+    color: #f8f7f9;
+    font-size: 1.6rem; /* Increase text size for the paragraph */
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .information .row {
+        flex-direction: column; /* Stack items vertically on smaller screens */
+        padding: 10px; /* Reduce padding */
+        margin: 10px; /* Reduce margin */
+    }
+
+    .information .row .image {
+        flex: 1 1 100%; /* Full width for images on smaller screens */
+        margin-bottom: 20px; /* Add space below the image */
+    }
+
+    .information .row .content,
+    .information .form-container {
+        flex: 1 1 100%; /* Full width for content and form containers */
+        padding: 20px; /* Reduce padding for smaller screens */
+    }
+
+    .information .row .content p,
+    .information .row .content h3,
+    .information h3 {
+        font-size: 1.5rem; /* Decrease font size for better readability */
+    }
+
+    .information .form-container label {
+        font-size: 1.2rem; /* Decrease font size for labels */
+    }
+
+    .information .form-container input,
+    .information .form-container select {
+        padding: 10px; /* Maintain padding */
+        font-size: 1.2rem; /* Decrease font size for input fields */
+    }
+
+    .information .form-container button {
+        padding: 10px; /* Maintain padding */
+        font-size: 1.2rem; /* Decrease font size for button */
+    }
+
+    .information p {
+        font-size: 1.2rem; /* Decrease font size for paragraph */
+    }
+
+    .read-more {
+        font-size: 1.2rem; /* Decrease font size for the read-more button */
+        padding: 8px 16px; /* Adjust padding for smaller screens */
+    }
+}
+   
+/* Donate button styles */
+.btn.donate-now {
+    font-size: 30rem;
+    padding: 20rem 40rem;
+    margin: 20rem;
+    display: inline-block;
+    background-color: var(--main-color);
+    color: var(--white);
+    border-radius: 0.8rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.btn.donate-now:hover {
+    background-color: var(--hover);
+    transform: scale(2);
+}
+
+/* section register */
+
+main {
+    margin-top: 40px;
+    padding: 40px; /* Increased padding */
+    background: linear-gradient(145deg, var(--primary-color), var(--main-color)); /* Gradient background */
+    border-radius: 10px;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2), -5px -5px 20px rgba(255, 255, 255, 0.5); /* 3D shadow effect */
+    max-width: 500px; /* Set max-width */
+    margin-left: auto; /* Center the box */
+    margin-right: auto;
+}
+
+main h3 {
+    text-align: center;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    font-size: 3em; /* Font size for the header */
+    color: var(--white); /* Change heading color to white */
+}
+
+.registration-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Gap between inputs */
+}
+
+.registration-form label {
+    font-weight: bold;
+    font-size: 1.5em; /* Font size for labels */
+    color: var(--white); /* Change label color to white */
+}
+
+.registration-form input,
+.registration-form select {
+    padding: 20px; /* Increased padding */
+    border: none; /* Remove default border */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.2), inset -2px -2px 5px rgba(255, 255, 255, 0.3); /* Inner shadow for 3D effect */
+    transition: border-color 0.3s;
+    font-size: 1.3em; /* Font size for input fields */
+}
+
+.registration-form input:focus,
+.registration-form select:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(106, 13, 173, 0.5); /* Glow effect on focus */
+}
+
+.registration-form button {
+    padding: 20px; /* Increased padding for button */
+    background-color: var(--main-color); /* Use main color for button */
+    color: white;
+    border: none;
+    border-radius: 10px; /* Rounded corners */
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* 3D shadow effect */
+    font-size: 1.6em; /* Font size for button */
+}
+
+.registration-form button:hover {
+    background-color: var(--hover); /* Darker color on hover */
+    transform: translateY(-2px);
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+main p {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1.4em; /* Font size for paragraph */
+    color: var(--white); /* Change color to white */
+}
+
+main p a {
+    color: var(--main-color); /* Link color */
+    text-decoration: underline; /* Underline the link */
+}
+/* Responsive styles */
+@media (max-width: 768px) {
+    main {
+        padding: 20px; /* Reduce padding for smaller screens */
+        max-width: 90%; /* Allow the form to take up more width on small screens */
+    }
+
+    main h3 {
+        font-size: 2.5em; /* Decrease font size for the heading */
+    }
+
+    .registration-form label {
+        font-size: 1.2em; /* Decrease font size for labels */
+    }
+
+    .registration-form input,
+    .registration-form select {
+        padding: 15px; /* Reduce padding in input fields */
+        font-size: 1.1em; /* Decrease font size for input fields */
+    }
+
+    .registration-form button {
+        padding: 15px; /* Reduce padding for the button */
+        font-size: 1.4em; /* Decrease font size for the button */
+    }
+
+    main p {
+        font-size: 1.2em; /* Decrease font size for the paragraph */
+    }
+}
+
+/* gallery */
+
+.gallery {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #fff;
+}
+
+
+.title-container {
+    background-color: #6f0eb4; /* Background color */
+    flex: 1 1 50%; 
+    padding: 40px 20px 20px; /* Adjusted padding */
+    border-radius: 10px; /* Rounded corners for a softer look */
+    margin: 0;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3), /* Larger shadow */
+                0 4px 8px rgba(0, 0, 0, 0.2); /* Smaller shadow */
+    transform: translateY(4px); /* Slight downward displacement for elevation effect */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+}
+
+.title-container:hover {
+    transform: translateY(-2px); /* Elevation effect on hover */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), /* Increase shadow on hover */
+                0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+
+.gallery h1 {
+    font-size: 2rem;
+    text-align:center;
+    padding: 1rem 0;
+    line-height: 1.8;
+    font-weight: bold;
+    font-size: 40px;
+    font-family: "Arial";
+    text-shadow: 0 1px 0 #ccc, 
+                 0 2px 0 #c9c9c9,
+                 0 3px 0 #bbb,
+                 0 4px 0 #b9b9b9,
+                 0 5px 0 #aaa,
+                 0 6px 1px rgba(0,0,0,.1),
+                 0 0 5px rgba(0,0,0,.1),
+                 0 1px 3px rgba(0,0,0,.3),
+                 0 3px 5px rgba(0,0,0,.2),
+                 0 5px 10px rgba(0,0,0,.25),
+                 0 10px 10px rgba(0,0,0,.2),
+                 0 20px 20px rgba(0,0,0,.15);
+    color: #fff; 
+}
+
+.gallery p {
+    font-size: 2rem;
+    color: #444;
+    margin: 40px 0 0
+}
+
+.gallery .gallery-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap: 2rem;
+    padding: 20px;
+}
+
+.gallery .gallery-container .box {
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); 
+    transition: transform 0.3s ease;
+}
+
+.gallery .gallery-container .box:hover {
+    transform: scale(1.05); 
+}
+
+.gallery .gallery-container .box img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.gallery .gallery-container .box:hover img {
+    transform: scale(1.1);
+}
+
+.gallery .gallery-container .box .icon {
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0; left: 0;
+    z-index: 10;
+    height: 100%;
+    width: 100%;
+    background: rgba(0,0,0,.7);
+    display: none;
+}
+
+.gallery .gallery-container .box .icon i {
+    font-size: 6rem;
+    color: var(--white);
+}
+
+.gallery .gallery-container .box:hover .icon {
+    display: flex;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column; /* Stack navbar items vertically */
+        align-items: flex-start; /* Align items to the start */
+    }
+    .gallery-container {
+        flex-direction: column; /* Stack gallery items vertically on small screens */
+    }
+    .box {
+        width: 100%; /* Full width for each item on small screens */
+    }
+    .header, .footer {
+        flex-direction: column; /* Stack header/footer items vertically */
+        align-items: flex-start; /* Align items to the start */
+    }
+}
+/* Responsive styles */
+@media (max-width: 768px) {
+    .gallery {
+        padding: 20px; /* Reduce padding for smaller screens */
+    }
+
+    .gallery h1 {
+        font-size: 1.5rem; /* Decrease font size for the title */
+    }
+
+    .gallery p {
+        font-size: 1.5rem; /* Decrease font size for the paragraph */
+        margin: 20px 0; /* Adjust margin for the paragraph */
+    }
+
+    .gallery .gallery-container {
+        grid-template-columns: 1fr; /* Stack gallery items in a single column */
+        padding: 10px; /* Reduce padding within the gallery container */
+    }
+
+    .gallery .gallery-container .box {
+        margin-bottom: 20px; /* Add space between items */
+        border-radius: 5px; /* Slightly reduce border radius */
+    }
+
+    .gallery .gallery-container .box img {
+        object-fit: cover; /* Ensure images cover the box area */
+    }
+
+    .gallery .gallery-container .box .icon i {
+        font-size: 4rem; /* Decrease icon size for better fit */
+    }
+}
+
+
+
+/* about us */
+.about {
+    padding: 2rem;
+    background: linear-gradient(to bottom, #4b0082, #d8bfd8); 
+    margin: 10rem 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.about .heading {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #6a0dad; 
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.2), 
+                 4px 4px 0 rgba(0, 0, 0, 0.15), 
+                 6px 6px 0 rgba(0, 0, 0, 0.1);
+}
+
+.about .row {
+    display: flex; /* Use flexbox to align elements */
+    align-items: center; /* Vertically align elements to the center */
+    flex-wrap: wrap; /* Allow elements to wrap if there's not enough space */
+}
+
+.about .row .image {
+    flex: 1; /* Allow the image to take up the necessary space */
+    max-width: 50%; /* Limit the maximum width to 50% */
+}
+
+.about .row .image img {
+    width: 100%; /* Ensure the image takes up 100% of the container */
+    border-radius: 8px; /* Rounded borders for the image */
+}
+
+
+.about .row .content {
+    flex: 1; /* Allow the text to take up the necessary space */
+    max-width: 50%; /* Limit the maximum width to 50% */
+    padding: 2rem; /* Spacing around the text */
+}
+
+
+
+.about .row .content h3 {
+    font-size: 2rem;
+    text-align:center;
+    padding: 1rem 0;
+    line-height: 1.8;
+    font-weight: bold;
+    font-size: 40px;
+    font-family: "Arial";
+    text-shadow: 0 1px 0 #ccc, 
+                 0 2px 0 #c9c9c9,
+                 0 3px 0 #bbb,
+                 0 4px 0 #b9b9b9,
+                 0 5px 0 #aaa,
+                 0 6px 1px rgba(0,0,0,.1),
+                 0 0 5px rgba(0,0,0,.1),
+                 0 1px 3px rgba(0,0,0,.3),
+                 0 3px 5px rgba(0,0,0,.2),
+                 0 5px 10px rgba(0,0,0,.25),
+                 0 10px 10px rgba(0,0,0,.2),
+                 0 20px 20px rgba(0,0,0,.15);
+    color: #fff; 
+}
+
+.about .row .content p {
+    font-size: 2rem;
+    color: #ffffff; 
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.read-more-button {
+    display: inline-block; /* Ensures that the link behaves like a button */
+    background-color: #6f0eb4; /* Background color */
+    color: white; /* Text color */
+    padding: 15px 30px; /* Increased internal spacing for a larger button */
+    text-decoration: none; /* Removes underline from the link */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Changes cursor on hover */
+    font-size: 1.2em; /* Increased font size for better visibility */
+    transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transitions */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow */
+    margin-top: 15px; /* Top margin */
+}
+
+/* Effect on hover */
+.read-more-button:hover {
+    background-color: #4e0c8a; /* Darker color on hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* More pronounced shadow */
+}
+
+/* Style for the additional section */
+#about-us1 {
+    margin-top: 50px; /* Top margin to separate from the top */
+    padding: 20px; /* Internal spacing */
+    background-color: #f9f9f9; /* Background color */
+    border: 1px solid #ddd; /* Border */
+    border-radius: 5px; /* Rounded corners */
+
+
+}
+
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column; /* Stack navbar items vertically */
+        align-items: flex-start; /* Align items to start */
+    }
+    .row {
+        flex-direction: column; /* Stack row items vertically */
+    }
+    .header, .footer {
+        flex-direction: column; /* Stack header/footer items vertically */
+        align-items: flex-start; /* Align items to start */
+    }
+}
+/* Responsive styles */
+@media (max-width: 768px) {
+    .about {
+        padding: 1rem; /* Reduce padding on smaller screens */
+        margin: 5rem 0; /* Reduce top and bottom margin */
+    }
+
+    .about .heading {
+        font-size: 2rem; /* Decrease font size of the heading */
+    }
+
+    .about .row {
+        flex-direction: column; /* Change to column layout for smaller screens */
+        align-items: center; /* Center align items */
+    }
+
+    .about .row .image {
+        max-width: 100%; /* Allow the image to take full width on smaller screens */
+        margin-bottom: 1rem; /* Add space below the image */
+    }
+
+    .about .row .content {
+        max-width: 100%; /* Allow content to take full width on smaller screens */
+        padding: 1rem; /* Reduce padding around the content */
+    }
+
+    .about .row .content h3 {
+        font-size: 1.5rem; /* Decrease font size of the content heading */
+    }
+
+    .about .row .content p {
+        font-size: 1.2rem; /* Decrease font size of the paragraph */
+    }
+
+    .read-more-button {
+        font-size: 1em; /* Reduce font size of the button */
+        padding: 10px 20px; /* Reduce padding of the button */
+    }
+
+    #about-us1 {
+        margin-top: 30px; /* Reduce top margin */
+        padding: 15px; /* Reduce internal padding */
+    }
+}
+
+
+
+/*donate*/
+.donation-form {
+    margin-top: 40px;
+    padding: 40px; /* Increased padding */
+    background: linear-gradient(145deg, var(--primary-color), var(--main-color)); /* Gradient background */
+    border-radius: 10px;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2), 
+                -5px -5px 20px rgba(255, 255, 255, 0.5); /* 3D shadow effect */
+    max-width: 500px; /* Set max-width */
+    margin-left: auto; /* Center the box */
+    margin-right: auto;
+}
+
+.donation-form h2 {
+    text-align: center;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    font-size: 2.5em; /* Font size for the title */
+    color: var(--white); /* Change title color to white */
+    margin-bottom: 20px; /* Space below the title */
+}
+
+.donation-form .form-group {
+    margin-bottom: 15px; /* Space between form groups */
+}
+
+.donation-form label {
+    font-weight: bold;
+    font-size: 1.2em; /* Font size for labels */
+    color: var(--white); /* Change label color to white */
+}
+
+.donation-form select,
+.donation-form input[type="number"],
+.donation-form input[type="text"] { /* Added input[type="text"] for consistency */
+    padding: 20px; /* Increased padding */
+    border: none; /* Remove default border */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.2), 
+                inset -2px -2px 5px rgba(255, 255, 255, 0.3); /* Inner shadow for 3D effect */
+    transition: border-color 0.3s;
+    font-size: 1.2em; /* Font size for input fields */
+    color: #333; /* Text color for input fields */
+    width: 100%; /* Full width */
+}
+
+.donation-form select:focus,
+.donation-form input[type="number"]:focus,
+.donation-form input[type="text"]:focus { /* Added input[type="text"] for focus effect */
+    outline: none;
+    box-shadow: 0 0 5px rgba(106, 13, 173, 0.5); /* Glow effect on focus */
+}
+
+.donation-form button {
+    padding: 20px; /* Increased padding for button */
+    background-color: var(--main-color); /* Use main color for button */
+    color: white;
+    border: none;
+    border-radius: 10px; /* Rounded corners */
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* 3D shadow effect */
+    font-size: 1.4em; /* Font size for button */
+    width: 100%; /* Full width button */
+}
+
+.donation-form button:hover {
+    background-color: var(--hover); /* Change to a different color on hover */
+}
+
+/* Additional Questions Styling */
+#additional-questions {
+    margin-top: 20px; /* Space above additional questions */
+}
+
+#additional-questions .form-group {
+    margin-bottom: 15px; /* Space between additional question groups */
+}
+
+/* Specific styles for additional question sections */
+#clothing-questions,
+#food-questions,
+#materials-questions {
+    display: none; /* Initially hidden */
+}
+
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .donation-form {
+        padding: 20px; /* Reduce padding on smaller screens */
+        max-width: 90%; /* Allow the form to take more width on smaller screens */
+    }
+
+    .donation-form h2 {
+        font-size: 2em; /* Smaller font size for the title */
+    }
+
+    .donation-form label {
+        font-size: 1em; /* Adjust label size for smaller screens */
+    }
+
+    .donation-form select,
+    .donation-form input[type="number"],
+    .donation-form input[type="text"] {
+        font-size: 1em; /* Smaller font size for input fields */
+        padding: 15px; /* Reduce padding for input fields */
+    }
+
+    .donation-form button {
+        font-size: 1.2em; /* Smaller font size for button */
+        padding: 15px; /* Reduce padding for button */
+    }
+
+    #additional-questions {
+        margin-top: 15px; /* Reduce space above additional questions */
+    }
+
+    #additional-questions .form-group {
+        margin-bottom: 10px; /* Reduce space between additional question groups */
+    }
+}
+
+
+
+
+/* services */
+
+
+
+.box-container {
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: center; /* Center the boxes horizontally */
+    align-items: center; /* Center the boxes vertically if needed */
+}
+
+.services {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #8539bb; /* Background color */
+    color: #fff; /* Text color */
+}
+
+.services .heading {
+    font-size: 40px; /* Font size */
+    text-align: center; /* Center alignment */
+    padding: 1rem 0; /* Top and bottom padding */
+    line-height: 1.8; /* Line height */
+    font-weight: bold; /* Bold font */
+    font-family: "Arial"; /* Font family */
+    color: #fff; /* Text color */
+    text-shadow: 0 1px 0 #ccc, 
+                 0 2px 0 #c9c9c9,
+                 0 3px 0 #bbb,
+                 0 4px 0 #b9b9b9,
+                 0 5px 0 #aaa,
+                 0 6px 1px rgba(0,0,0,.1),
+                 0 0 5px rgba(0,0,0,.1),
+                 0 1px 3px rgba(0,0,0,.3),
+                 0 3px 5px rgba(0,0,0,.2),
+                 0 5px 10px rgba(0,0,0,.25),
+                 0 10px 10px rgba(0,0,0,.2),
+                 0 20px 20px rgba(0,0,0,.15); 
+}
+
+.services .row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+/* Style for each service box */
+
+.header {
+    z-index: 1000; /* Ensure it stays above other content */
+}
+
+
+.services .box {
+     /* Necessary for positioning the shine effect */
+    display: flex;
+    flex-direction: column; /* Stack image on top of text */
+    align-items: center; /* Center items horizontally */
+    max-width: 45%; /* Adjust width to show two columns */
+    margin: 20px; /* Spacing between boxes */
+    text-align: center; /* Center text within the box */
+    overflow: hidden; /* Prevent shine from overflowing */
+    border-radius: 10px; /* Rounded corners */
+    background-color: #4B0082; /* Light lavender color */
+    color: #4B0082; /* Darker purple for text */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition for zoom effect and shadow */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Soft shadow for initial state */
+}
+
+
+
+.services .box .image {
+    flex: 1;
+    max-width: 400px; 
+    margin: 20px;
+    transition: transform 0.3s, filter 0.3s; /* Smooth transition */
+}
+
+.services .box img {
+    width: 100%;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2); /* Shadow */
+    transition: transform 0.3s; /* Smooth transition */
+}
+
+.services .image {
+    flex: 1; /* Allow the image to take up available space */
+    max-width: 100%; /* Ensure it does not exceed the width of the container */
+    margin: 20px; /* Space around the image */
+}
+
+
+.services .image img {
+    width: 100%; /* Make the image fill the entire width of the container */
+    height: auto; /* Maintain the aspect ratio of the image */
+    max-height: 400px; /* Adjust the maximum height as needed */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2); /* Shadow */
+}
+
+.services .box:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3), 0 0 15px rgba(255, 255, 255, 0.5); /* Brighter shadow for glow effect */
+}
+.services .content {
+    background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2); /* Shadow */
+}
+
+/* Style for titles */
+.services .title {
+    font-size: 1.5em; /* Font size for the title */
+    margin: 10px 0; /* Margin around the title */
+    color: white;
+}
+
+/* Style for paragraphs */
+
+
+.services .content p {
+    font-size: 1.5em; /* Adjust the text size as needed */
+    line-height: 1; /* Spacing between lines */
+    color: white;
+}
+
+.services .shine {
+    position: absolute; 
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.5); 
+    opacity: 0; 
+    transition: opacity 0.3s; 
+    border-radius: 10px; 
+}
+
+.services .box:hover .shine {
+    opacity: 1; 
+    transform: scale(1.05); 
+}
+
+.decorative-button {
+    padding: 15px 30px; /* Increase padding for a larger button */
+    font-size: 1.2em; /* Increase font size */
+    color: white; /* Text color */
+    background-color: #4B0082; /* Dark purple background color */
+    border: none; /* No border */
+    border-radius: 8px; /* Rounded corners */
+    cursor: pointer; /* Change cursor on hover */
+    text-decoration: none; /* Remove underline */
+    display: inline-block; /* Make the button behave like a block-level element */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transitions */
+    margin-top: 20px; /* Space above the button */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+}
+
+/* Hover effect for the button */
+.decorative-button:hover {
+    background-color: #6A0B93; /* Lighter purple on hover */
+    transform: translateY(-3px); /* Elevation effect on hover */
+}
+
+/* Active effect for the button (when clicked) */
+.decorative-button:active {
+    transform: translateY(1px); /* Sink effect when clicked */
+}
+
+/* Modal styles */
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed in the window */
+    z-index: 1; /* Above other elements */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scrolling if needed */
+    background-color: rgba(0,0,0,0.7); /* Black background with transparency */
+}
+
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+.modal-content {
+    background-color: #4B0082; /* Modal background color */
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888; /* Border */
+    border-radius: 10px; /* Rounded corners */
+    width: 80%; /* Width of the modal */
+    max-width: 600px; /* Maximum width */
+    color: #ffffff; /* Text color */
+}
+
+.modal-content h2 {
+    font-size: 24px; /* Font size for modal title */
+    margin-bottom: 20px; /* Space below the title */
+}
+
+.modal-content p {
+    font-size: 1.2rem; /* Font size for modal text */
+    line-height: 1.6; /* Line height */
+}
+
+.close {
+    color: #aaa; /* Close button color */
+    float: right; /* Align to the right */
+    font-size: 28px; /* Font size */
+    font-weight: bold; /* Bold font */
+}
+
+.close:hover,
+.close:focus {
+    color: #fff; /* Change color on hover/focus */
+    text-decoration: none; /* No underline */
+    cursor: pointer; /* Pointer cursor */
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column; /* Stack navigation bar items vertically */
+        align-items: flex-start; /* Align items to the start */
+    }
+    .row {
+        flex-direction: column; /* Stack row items vertically */
+    }
+    .header, .footer {
+        flex-direction: column; /* Stack header/footer items vertically */
+        align-items: flex-start; /* Align items to the start */
+    }
+    .box {
+        width: 100%; /* Each box will take 100% width on small screens */
+        margin-bottom: 20px; /* Space between boxes */
+    }
+}
+
+.btn-more-info {
+    padding: 15px 30px; /* Increase padding for a larger button */
+    font-size: 1.2em; /* Increase font size */
+    color: white; /* Text color */
+    background-color: #9b4fd0; /* Dark purple background color */
+    border: none; /* No border */
+    border-radius: 8px; /* More rounded corners */
+    cursor: pointer; /* Change cursor on hover */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transitions */
+    margin-top: 20px; /* Additional space above the button */
+}
+
+/* Hover effect for the button */
+.btn-more-info:hover {
+    background-color: #6A0B93; /* Lighter purple on hover */
+    transform: translateY(-3px); /* Elevation effect on hover */
+}
+
+/* Active effect for the button (when clicked) */
+.btn-more-info:active {
+    transform: translateY(1px); /* Sink effect when clicked */
+}
+
+.button {
+    display: inline-block; /* Make the link behave like a block element */
+    padding: 20px 40px; /* Increase button size */
+    background-color: #973ced; /* Background color (e.g., bright orange) */
+    color: white; /* Text color */
+    text-align: center; /* Center the text */
+    border: none; /* No border */
+    border-radius: 8px; /* Rounded corners */
+    font-size: 20px; /* Increase font size */
+    text-decoration: none; /* Remove underline from the link */
+    transition: background-color 0.3s; /* Smooth transition for background color */
+}
+
+.button:hover {
+    background-color: #973ced; /* Darker shade on hover */
+}
+/* Responsive styles for the services section */
+@media (max-width: 768px) {
+    .services .row {
+        flex-direction: column; /* Stack row items vertically */
+        align-items: center; /* Center items horizontally */
+    }
+
+    .services .box {
+        max-width: 100%; /* Each box will take 100% width on small screens */
+        margin: 10px 0; /* Space between boxes */
+    }
+
+    .services .heading {
+        font-size: 30px; /* Adjust heading size for smaller screens */
+    }
+
+    .services .title {
+        font-size: 1.2em; /* Adjust title size in boxes */
+    }
+
+    .services .content p {
+        font-size: 1.2em; /* Adjust paragraph size */
+    }
+
+    .decorative-button, .btn-more-info {
+        width: 100%; /* Full width buttons on small screens */
+        font-size: 1em; /* Adjust font size */
+    }
+
+    .modal-content {
+        width: 90%; /* Full width for modal on small screens */
+        padding: 15px; /* Adjust padding */
+    }
+
+    .modal-content h2 {
+        font-size: 20px; /* Adjust modal title size */
+    }
+
+    .modal-content p {
+        font-size: 1rem; /* Adjust modal text size */
+    }
+}
+
+        
+/* Contact Section */
+.contact {
+    padding: 100px 20px;
+    text-align: center;
+    background-color: #e0c9f9; 
+    color: #fff; 
+}
+
+.contact .heading {
+    font-size: 40px;
+    padding: 1rem 0;
+    line-height: 1.8;
+    font-weight: bold;
+    text-shadow: 0 1px 0 #ccc, 
+                 0 2px 0 #c9c9c9,
+                 0 3px 0 #bbb,
+                 0 4px 0 #b9b9b9,
+                 0 5px 0 #aaa,
+                 0 6px 1px rgba(0,0,0,.1),
+                 0 0 5px rgba(0,0,0,.1),
+                 0 1px 3px rgba(0,0,0,.3),
+                 0 3px 5px rgba(0,0,0,.2),
+                 0 5px 10px rgba(0,0,0,.25),
+                 0 10px 10px rgba(0,0,0,.2),
+                 0 20px 20px rgba(0,0,0,.15); 
+}
+
+.contact .row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.contact .image {
+    flex: 1;
+    max-width: 400px; 
+    margin: 20px;
+}
+
+.contact .image img {
+    width: 100%;
+    border-radius: 10px; 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.contact-info {
+    flex: 2;
+    max-width: 600px; 
+    margin: 20px;
+    padding: 20px;
+    background-color: #5e0e8d; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.contact-info p {
+    font-size: 2rem;
+    line-height: 1.6;
+    margin: 10px 0;
+}
+
+@media (max-width: 768px) {
+    .contact .row {
+        flex-direction: column; 
+    }
+}
+
+/* Box container styles */
+.box-container2 {
+    display: flex;
+    justify-content: flex-start; 
+    align-items: flex-start; 
+    gap: 30px; 
+}
+
+/* Style for the form container */
+.form-container {
+    margin-top: 40px;
+    padding: 40px; /* Increased padding */
+    background: linear-gradient(145deg, var(--primary-color), var(--main-color)); /* Gradient background */
+    border-radius: 10px;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2), -5px -5px 20px rgba(255, 255, 255, 0.5); /* 3D shadow effect */
+    max-width: 500px; /* Set max-width */
+    margin-left: auto; /* Center the box */
+    margin-right: auto;
+}
+
+.form-title {
+    text-align: center;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    font-size: 2.5em; /* Font size for the title */
+    color: var(--white); /* Change title color to white */
+    margin-bottom: 20px; /* Space below the title */
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Gap between inputs */
+}
+
+.login-form label {
+    font-weight: bold;
+    font-size: 1.2em; /* Font size for labels */
+    color: var(--white); /* Change label color to white */
+}
+
+.login-form input,
+.login-form select,
+.login-form textarea {
+    padding: 20px; /* Increased padding */
+    border: none; /* Remove default border */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.2), inset -2px -2px 5px rgba(255, 255, 255, 0.3); /* Inner shadow for 3D effect */
+    transition: border-color 0.3s;
+    font-size: 1.2em; /* Font size for input fields */
+}
+
+.login-form input:focus,
+.login-form select:focus,
+.login-form textarea:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(106, 13, 173, 0.5); /* Glow effect on focus */
+}
+
+.login-form button {
+    padding: 20px; /* Increased padding for button */
+    background-color: var(--main-color); /* Use main color for button */
+    color: white;
+    border: none;
+    border-radius: 10px; /* Rounded corners */
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* 3D shadow effect */
+    font-size: 1.4em; /* Font size for button */
+}
+
+.login-form button:hover {
+    background-color: var(--hover); /* Cambia a un color diferente en hover */
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .login-form {
+        padding: 20px; /* Reduce padding on smaller screens */
+        width: 90%; /* Full width on small screens */
+        max-width: none; /* Remove max width */
+    }
+
+    .contact-button {
+        width: 100%; /* Full width button on small screens */
+        font-size: 1em; /* Adjust font size */
+    }
+
+    .form-title {
+        font-size: 2rem; /* Adjust title size for smaller screens */
+    }
+    
+    .contact-info {
+        max-width: 100%; /* Allow full width on smaller screens */
+        margin: 10px 0; /* Adjust margin */
+    }
+    
+    .contact .row {
+        flex-direction: column; /* Stack items vertically */
+    }
+}
+
+
+
+
+/* Footer */
+.footer {
+    background-repeat: no-repeat;
+    background-size: auto 50%;
+    background-position: center;
+    margin-top: 2rem;
+    text-align: center;
+    padding: 40px 20px; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+    border-radius: 10px; 
+    color: #fff; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3), 
+                0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.footer .logo-container {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.footer .logo {
+    font-size: 2rem; /* Reduced from 2.5rem to 2rem */
+    font-weight: bolder;
+    color: var(--black);
+}
+
+.footer .logo i {
+    color: var(--main-color);
+    padding-right: .5rem;
+}
+
+.footer .icons-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap: 2rem;
+}
+
+.footer .icons-container .icons {
+    text-align: center;
+    padding: 3rem 2rem;
+}
+
+.footer .icons-container .icons i {
+    height: 4rem; /* Reduced from 6rem to 4rem */
+    width: 4rem; /* Reduced from 6rem to 4rem */
+    border-radius: 50%;
+    background: var(--main-color);
+    color: var(--white);
+    margin-bottom: .5rem;
+    line-height: 3.8rem; /* Reduced from 5.8rem to 3.8rem */
+    font-size: 1.5rem; /* Reduced from 2rem to 1.5rem */
+}
+
+.footer .icons-container .icons h3 {
+    font-size: 2rem; /* Reduced from 2.5rem to 2rem */
+    color: #000000;
+    padding: 1rem 0;
+    text-decoration: underline;
+}
+
+.footer .icons-container .icons p {
+    font-size: 1.5rem; /* Reduced from 2rem to 1.5rem */
+    color: #333333;
+    line-height: 1.5;
+    text-transform: capitalize;
+}
+
+.footer .icons-container .icons .link {
+    font-size: 1.5rem; /* Reduced from 2rem to 1.5rem */
+    line-height: 2rem;
+    color: var(--main-color);
+    padding: .5rem 0;
+    display: block;
+}
+
+.footer .icons-container .icons .link:hover {
+    color: var(--hover);
+    text-decoration: underline;
+}
+
+.footer .share {
+    margin: 2rem 0;
+}
+
+.footer .share a {
+    height: 4rem; /* Reduced from 6rem to 4rem */
+    width: 4rem; /* Reduced from 6rem to 4rem */
+    line-height: 3.8rem; /* Reduced from 5.8rem to 3.8rem */
+    color: var(--white);
+    background: var(--main-color);
+    margin: 0 .3rem;
+    font-size: 1.5rem; /* Reduced from 2.5rem to 1.5rem */
+}
+
+.footer .share a:hover {
+    background: var(--hover);
+}
+
+.footer .credit {
+    font-size: 2rem; /* Reduced from 2.5rem to 2rem */
+    color: #000000;
+    border-top: var(--border);
+}
+
+.footer .credit span {
+    color: var(--main-color);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .footer {
+        padding: 20px; /* Reduce padding on smaller screens */
+    }
+
+    .footer .logo {
+        font-size: 1.5rem; /* Adjust logo size */
+    }
+
+    .footer .icons-container {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Adjust grid for smaller screens */
+    }
+
+    .footer .icons-container .icons h3 {
+        font-size: 1.5rem; /* Adjust heading size */
+    }
+
+    .footer .icons-container .icons p {
+        font-size: 1.2rem; /* Adjust paragraph size */
+    }
+    .footer .icons-container .icons p {
+        font-size: 1.2rem; /* Adjust paragraph size */
+    }
+}

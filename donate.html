@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="imagen/logo.jpeg" type="image/png"> <!-- Add this line for the favicon -->
+     <!-- font awesome -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+     <!-- swiper -->
+     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css">
+     <!-- lightgallery -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.0/css/lightgallery.min.css">
+    <title>MJ Newcomer Solutions</title>
+</head>
+
+
+<body>
+
+    <div class="header">
+        <a href="#" class="logo"> <i class="fas fa-MJ-Newcomer-Solutions"></i>MJ Newcomer Solutions
+            <img src="imagen/logo.jpeg" alt="MJ Newcomer Solutions Logo" style="height: 65px;"> <!-- Adjust the path and size as needed -->
+        </a>
+        <nav class="navbar">
+            
+            <a href="index.html">Home</a>
+            <a href="About.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="donate.html">Donate</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html">Contact</a>
+            
+        </nav>
+        <div id="menu-btn" class="fas fa-bars"></div>
+    </div>
+    
+
+<!-- donate section -->
+<section class="home" id="donate">
+    <div class="swiper home-slider">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide slide" style="background: url(inf-ima/ima1.jpeg) no-repeat;">
+                <div class="content">
+                    <h3>Do you want to help us?</h3>
+                    <a href="#donation-form1" class="btn">Donate</a>
+                </div>
+            </div>
+
+            <div class="swiper-slide slide" style="background: url(inf-ima/ima2.jpeg) no-repeat;">
+                <div class="content">
+                    <h3>click below.</h3>
+                    <a href="#donation-form1" class="btn">Donate</a>
+                </div>
+            </div>
+    
+            <div class="swiper-slide slide" style="background: url(gallery/imagen4.jpeg) no-repeat;">
+                <div class="content">
+                    <h3>Discover the different options to help us</h3>
+                    <a href="#donation-form1" class="btn">Donate</a>
+                </div>
+            </div>
+        </div>
+         
+        <div class="swiper-button-next"> </div>
+        <div class="swiper-button-prev"> </div>
+    </div>
+    </section>
+        
+   <!-- information-->
+
+   <section class="information" id="information">
+    <div class="row">
+        <div class="video-container">
+            <video class="information-video" autoplay muted loop>
+                <source src="inf-ima/video2.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="content">
+            <h3>Did You Know?</h3>
+            <p>At MJ Newcomer Solutions, your donations help us support individuals and families navigating the challenges of immigration. 
+            Your generosity fills the gap in Canada's Immigration system, providing love, light, and essential resources to those in need.</p>
+            <button class="donate-now" onclick="location.href='#donation-form1';">Donate Now</button>
+        </div>
+    </div>
+</section>
+
+
+
+<form class="donation-form" id ="donation-form1">
+    <h2>Donate Now</h2>
+    <!-- Donation Type -->
+    <div class="form-group">
+        <label for="donation_type">Donation Type:</label>
+        <select id="donation_type" name="donation_type" onchange="updateDonationQuestions()" required>
+            <option value="">Select Donation Type</option>
+            <option value="money">Money</option>
+            <option value="clothing">Clothing</option>
+            <option value="food">Food</option>
+            <option value="materials">Materials</option>
+        </select>
+    </div>
+
+   <!-- Donation Frequency -->
+<div class="form-group">
+    <label for="frequency">Donation Frequency:</label>
+    <select id="frequency" name="frequency" required>
+        <option value="">Select Frequency</option> <!-- Placeholder option -->
+        <option value="one-time">One-time Donation</option>
+        <option value="monthly">Monthly Donation</option>
+        <option value="quarterly">Quarterly Donation</option>
+        <option value="annually">Annual Donation</option>
+    </select>
+</div>
+
+<!-- Donation Purpose -->
+<div class="form-group">
+    <label for="purpose">Donation Purpose:</label>
+    <select id="purpose" name="purpose" required>
+        <option value="">Select Purpose</option> <!-- Placeholder option -->
+        <option value="general">General Support</option>
+        <option value="education">Education Programs</option>
+        <option value="community">Community Outreach</option>
+        <option value="women">Women's Empowerment</option>
+        <option value="immigration">Immigration Support</option>
+    </select>
+</div>
+
+    <!-- Additional Questions -->
+    <div id="additional-questions" style="display:none;">
+        <div id="clothing-questions" style="display:none;">
+            <div class="form-group">
+                <label for="clothing_type">Type of Clothing:</label>
+                <select id="clothing_type" name="clothing_type">
+                    <option value="summer">Summer</option>
+                    <option value="winter">Winter</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="clothing_condition">Condition:</label>
+                <select id="clothing_condition" name="clothing_condition">
+                    <option value="good">Good Condition</option>
+                    <option value="bad">Bad Condition</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="clothing_delivery_date">When will you deliver the clothing?</label>
+                <input type="date" id="clothing_delivery_date" name="clothing_delivery_date">
+            </div>
+        </div>
+
+        <div id="food-questions" style="display:none;">
+            <div class="form-group">
+                <label for="food_type">Type of Food:</label>
+                <select id="food_type" name="food_type">
+                    <option value="sweet">Sweet</option>
+                    <option value="savory">Savory</option>
+                    <option value="fruit">Fruit</option>
+                    <option value="vegetable">Vegetable</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="drink_type">Type of Drink:</label>
+                <select id="drink_type" name="drink_type">
+                    <option value="water">Water</option>
+                    <option value="soda">Soda</option>
+                </select>
+            </div>
+        </div>
+
+        <div id="materials-questions" style="display:none;">
+            <div class="form-group">
+                <label for="material_type">Type of Material:</label>
+                <select id="material_type" name="material_type">
+                    <option value="school">School Supplies</option>
+                    <option value="cleaning">Cleaning Supplies</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <button type="submit">Submit Donation</button>
+</form>
+
+
+                
+       <!-- Footer  -->
+    <footer class="footer">
+
+            <div class="logo-container">
+                <a href="#" class="logo"> <i class="fas fa-MJ-Newcomer-Solutions"></i>MJ Newcomer Solutions
+                    <img src="imagen/logo.jpeg" alt="MJ Newcomer Solutions Logo" style="height: 65px;"> <!-- Adjust the path and size as needed -->
+                </a>
+            </div>
+        
+            <div class="icons-container">
+                <div class="icons">
+                    <i class="fas fa-map"> </i>
+                    <h3> Address </h3>
+                    <p>Online, Toronto, ON, Canada. </p>
+                </div>
+        
+                <div class="icons">
+                    <i class="fas fa-phone"></i>
+                    <h3>Phone</h3>
+                    <p> +172-159-903</p>
+                    <p> +1(647)-712-1746</p>
+                </div>
+                <div class="icons">
+                    <i class="fas fa-envelope"> </i>
+                    <h3> Email </h3>
+                    <a href="#" class="link">mjnewcomersolutions@gmail.com</a>
+                </div>
+        
+                <div class="icons">
+                    <i class="fas fa-clock"> </i>
+                    <h3> Opening Hours </h3>
+                    <p> Monday - Friday: 9:00 a.m. - 6:00 p.m. <br> Saturday: 10:00 a.m. - 5:00 p.m. <br> Sunday: Closed</p>
+                </div>
+            </div>
+        
+            <div class="share">
+                <a href="#" class="fab fa-facebook-f"></a>
+                <a href="#" class="fab fa-twitter"></a>
+                <a href="#" class="fab fa-instagram"></a>
+                <a href="#" class="fab fa-linkedin"></a>
+            </div>
+
+        </footer>
+
+                <!-- swiper-->
+                <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+                <!-- lightgallery -->
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.0/js/lightgallery.min.js"></script>
+                <!-- custom js -->
+                <script src="script.js"></script>
+        
+                <script>
+                    lightGallery(document.querySelector('.gallery .gallery-container'));
+                </script>
+
+    </body>
+</html>
